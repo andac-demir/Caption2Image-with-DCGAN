@@ -12,17 +12,11 @@
            2: test
 
 ### How to run:           
-  first, run the visdom server by:
-  
-  python -m visdom.server
+  * first, run the visdom server by: python -m visdom.server
 
-  then, to train the model do:
-  
-  python main.py 
+  * then, to train the model do: python main.py 
 
-  to do inference:
-  
-  python main.py --inference "true" --split 2
+  * to do inference: python main.py --inference "true" --split 2
 
 ### Network Model
     Based on DC-GAN:
@@ -39,10 +33,10 @@
     No fully connected or pooling layers used.
 
     Architecture Guidelines:
-    -Pooling layers replaced with fractional strided convolutions (generator)
-     and strided convolutions (discriminator).
-    -Batchnorm used in both the generator and discriminator.
-    -Fully connected layers removed for increased depth.
-    -In generator ReLU activation used, except for the output which uses Tanh.
-    -In discriminator Leaky ReLU activation used for all layers.
+    - Pooling layers replaced with fractional strided convolutions (generator)
+      and strided convolutions (discriminator).
+    - Batchnorm used in both the generator and discriminator.
+    - Fully connected layers removed for increased depth.
+    - In generator ReLU activation used, except for the output which uses Tanh.
+    - In discriminator Leaky ReLU activation used for all layers.
 
