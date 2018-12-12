@@ -1,24 +1,30 @@
 # Caption2Image with DCGAN
 
-Parsed Args:
+### Parsed Args:
     inference: if false, train. If true, generate fake images from
                arbitrary text in the dataset. 
+
     dataset: dataset to use. Options: 'flowers' and 'birds'.
+    
     split: an integer that indicates which split to use.
            0: train
            1: validation
            2: test
-How to run:           
+
+### How to run:           
   first, run the visdom server by:
+  
   python -m visdom.server
 
   then, to train the model do:
+  
   python main.py 
 
   to do inference:
+  
   python main.py --inference "true" --split 2
 
-Network Model
+### Network Model
     Based on DC-GAN:
     https://github.com/pytorch/examples/blob/master/dcgan/main.py
     
