@@ -30,7 +30,6 @@
     Based on DC-GAN:
     https://github.com/pytorch/examples/blob/master/dcgan/main.py
     
-    Network Architecture:
     First, the text query t is encoded using a fully connected layer to a 
     small dimension (128). 
     Then concatenated to the noise vector z.  
