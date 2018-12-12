@@ -1,4 +1,4 @@
-# Caption2Image with DCGAN
+# Caption to Image with DC-GAN
 
 ### Network Architecture
 ![alt text](https://github.com/andac-demir/Caption2Image-with-DCGAN/blob/master/images/textDCGAN.JPG)
