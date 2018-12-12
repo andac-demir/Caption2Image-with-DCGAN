@@ -21,7 +21,7 @@
 
   * then, to train the model do: python main.py 
 
-  * to do inference: python main.py --inference "true" --split 2
+  * to do inference over the test data: python main.py --inference "true" --split 2
 
 ### Network Model
     Based on DC-GAN:
