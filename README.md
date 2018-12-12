@@ -11,6 +11,11 @@
              1: validation
              2: test
 
+### Loading Datasets:
+  *  We used Caltech-UCSD Birds 200 and Oxford-102 Flowers datasets in training, both are in hd5 format.
+  
+  * Upload the datasets from the links: [birds.hdf5](https://drive.google.com/file/d/1mNhn6MYpBb-JwE86GC1kk0VJsYj-Pn5j/view), [flowers.hdf5](https://drive.google.com/file/d/1EgnaTrlHGaqK5CCgHKLclZMT_AMSTyh8/view) and then move to your Datasets file.
+
 ### How to run:           
   * first, run the visdom server by: python -m visdom.server
 
