@@ -11,12 +11,17 @@
              1: validation
              2: test
 
+### Loading Datasets:
+  *  We used Caltech-UCSD Birds 200 and Oxford-102 Flowers datasets in training, both are in hd5 format.
+  
+  * Upload the datasets from the links: [birds](https://drive.google.com/file/d/1mNhn6MYpBb-JwE86GC1kk0VJsYj-Pn5j/view), [flowers](https://drive.google.com/file/d/1EgnaTrlHGaqK5CCgHKLclZMT_AMSTyh8/view) and then move them to your Datasets folder.
+
 ### How to run:           
   * first, run the visdom server by: python -m visdom.server
 
   * then, to train the model do: python main.py 
 
-  * to do inference: python main.py --inference "true" --split 2
+  * to do inference over the test data: python main.py --inference "true" --split 2
 
 ### Network Model
     Based on DC-GAN:
