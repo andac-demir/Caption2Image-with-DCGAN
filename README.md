@@ -1,15 +1,15 @@
 # Caption2Image with DCGAN
 
 ### Parsed Args:
-    inference: if false, train. If true, generate fake images from
-               arbitrary text in the dataset. 
+    --inference: if false, train. If true, generate fake images from
+                 arbitrary text in the dataset. 
 
-    dataset: dataset to use. Options: 'flowers' and 'birds'.
+    --dataset: dataset to use. Options: 'flowers' and 'birds'.
     
-    split: an integer that indicates which split to use.
-           0: train
-           1: validation
-           2: test
+    --split: an integer that indicates which split to use.
+             0: train
+             1: validation
+             2: test
 
 ### How to run:           
   * first, run the visdom server by: python -m visdom.server
