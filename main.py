@@ -6,7 +6,6 @@
            0: train
            1: validation
            2: test
-    vis_screen: environment name for visdom visualization online.
 '''
 from train import Train
 import argparse
