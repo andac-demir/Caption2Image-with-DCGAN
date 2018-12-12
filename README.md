@@ -1,5 +1,8 @@
 # Caption2Image with DCGAN
 
+### Network Architecture
+![alt text](https://github.com/andac-demir/Caption2Image-with-DCGAN/blob/master/images/textDCGAN.JPG)
+
 ### Parsed Args:
     --inference: if false, train. If true, generate fake images from
                  arbitrary text in the dataset. 
