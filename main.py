@@ -23,19 +23,21 @@ def parseArgs():
     parser.add_argument("--inference", type=str2bool, default='f')
     parser.add_argument('--dataset', type=str, default='flowers')
     parser.add_argument('--split', default=0, type=int)
+    parser.add_argument('--optimization', type=str, default='lbfgs')
     args = parser.parse_args()
     return args
 
 def main():
     args = parseArgs()
-    train = Train(dataset=args.dataset,
+    train = Train(dataset=args.dataset.lower(),
                   split=args.split,
                   lr=0.0002,
                   l1_coef=50,
                   l2_coef=100,
                   batch_size=128,
                   num_workers=8,
-                  epochs=120)
+                  epochs=120,
+                  optimization=args.optimization.lower())
     if not args.inference:
         train.train_network()
     else:

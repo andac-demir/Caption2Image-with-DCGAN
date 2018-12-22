@@ -12,7 +12,7 @@ import os
 
 class Train(object):
     def __init__(self, dataset, split, lr, l1_coef, l2_coef, 
-                 batch_size, num_workers, epochs):
+                 batch_size, num_workers, epochs, optimization):
         self.generator = torch.nn.DataParallel(dcgan.generator().cuda())
         self.discriminator = torch.nn.DataParallel(dcgan.discriminator().
                                                                  cuda())
@@ -41,10 +41,21 @@ class Train(object):
         self.data_loader = DataLoader(self.dataset, batch_size=self.batch_size, 
                                       shuffle=True, 
                                       num_workers=self.num_workers)
-        self.optimG = torch.optim.Adam(self.generator.parameters(), lr=self.lr,
-                                       betas=(self.beta1, 0.999))
-        self.optimD = torch.optim.Adam(self.discriminator.parameters(), 
-                                       lr=self.lr, betas=(self.beta1, 0.999))
+        if optimization == 'adam':
+            self.optimG = torch.optim.Adam(self.generator.parameters(), 
+                            lr=self.lr, betas=(self.beta1, 0.999))
+            self.optimD = torch.optim.Adam(self.discriminator.parameters(), 
+                            lr=self.lr, betas=(self.beta1, 0.999))
+        else:
+            self.optimG = torch.optim.LBFGS(self.generator.parameters(), lr=1, 
+                            max_iter=20, max_eval=None, tolerance_grad=1e-05, 
+                            tolerance_change=1e-09, history_size=100, 
+                            line_search_fn=None)
+            self.optimD = torch.optim.LBFGS(self.discriminator.parameters(), 
+                            lr=1, max_iter=20, max_eval=None, 
+                            tolerance_grad=1e-05, tolerance_change=1e-09, 
+                            history_size=100, line_search_fn=None)
+        
         self.logger = Logger()
         self.checkpoints_path = 'checkpoints'
 
